@@ -1,0 +1,22 @@
+--- se.py	2016-12-16 13:10:09.000000000 +0800
++++ lab2.py	2017-03-13 09:59:33.000000000 +0800
+@@ -124,6 +124,7 @@
+ parser = optparse.OptionParser()
+ Options.addCommonOptions(parser)
+ Options.addSEOptions(parser)
++parser.add_option("--bpred", type="str", default="TournamentBP")
+ 
+ if '--ruby' in sys.argv:
+     Ruby.define_options(parser)
+@@ -246,6 +247,11 @@
+ 
+     if options.checker:
+         system.cpu[i].addCheckerCpu()
++    
++    #change the branch preditor
++    if options.cpu_type == "DerivO3CPU":
++        brach_predictor = locals()[options.bpred]
++        system.cpu[i].branchPred = brach_predictor()
+ 
+     system.cpu[i].createThreads()
+ 

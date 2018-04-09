@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /* How many iterations? */
-#define ITERATIONS (100000000)
+#define ITERATIONS (1000000)
 
 /* Which bit of the counter to test? */
-#define BIT 1
+#define BIT 3
 
 #ifdef CMOV
 

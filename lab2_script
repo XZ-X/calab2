@@ -1,0 +1,99 @@
+#! /bin/bash
+
+CONFIG="--cmd=lab2/cmov1 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_1_cmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+
+#---------------------------------
+
+CONFIG="--cmd=lab2/ncmov1 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_1_ncmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+
+#---------------------------------------
+
+CONFIG="--cmd=lab2/cmov2 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_2_cmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+#------------------------------------------
+
+CONFIG="--cmd=lab2/ncmov2 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_2_ncmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+#----------------------------------------------
+
+CONFIG="--cmd=lab2/cmov3 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_3_cmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+#----------------------------------------------------
+
+CONFIG="--cmd=lab2/ncmov3 --cpu-type=DerivO3CPU --caches --l2cache --bpred=LocalBP"
+
+build/X86/gem5.opt configs/example/se.py ${CONFIG}
+
+FILE_NAME=local_3_ncmov
+
+
+mkdir lab2/ret/${FILE_NAME}
+
+echo ${CONFIG} > config.txt
+
+cp m5out/stats.txt lab2/ret/${FILE_NAME}/stats.txt
+
+
+
+
+
+
+
+

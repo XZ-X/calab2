@@ -1,0 +1,8 @@
+#! /bin/bash
+
+
+#echo "ncmov$1"
+
+gcc -Wall -O2 cmov.c -o "ncmov$1"
+
+gcc -DCMOV -Wall -O2 cmov.c -o "cmov$1"
